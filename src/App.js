@@ -29,19 +29,21 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Welcome to knitspiration!</h1>
-      <ImageList variant="masonry" cols={3} gap={8}>
-        {photosArray.map((item) => (
-          <ImageListItem key={item.img}>
-            <img
-              srcSet={`${item.urls.regular}?w=248&fit=crop&auto=format&dpr=2 2x`}
-              src={`${item.urls.regular}?w=248&fit=crop&auto=format`}
-              alt={item.alt_description || ''}
-              loading="lazy"
-            />
-          </ImageListItem>
-        ))}
-      </ImageList>
+      <h1>knitspiration</h1>
+      <div className="image-container">
+        <ImageList variant="masonry" cols={3} gap={8}>
+          {photosArray.map((item) => (
+            <ImageListItem key={item.img}>
+              <img
+                srcSet={`${item.urls.regular}?w=248&fit=crop&auto=format&dpr=2 2x`}
+                src={`${item.urls.regular}?w=248&fit=crop&auto=format`}
+                alt={item.alt_description || ''}
+                loading="lazy"
+              />
+            </ImageListItem>
+          ))}
+        </ImageList>
+      </div>
     </div>
   );
 }
